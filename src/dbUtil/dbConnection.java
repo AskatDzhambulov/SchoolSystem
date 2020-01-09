@@ -23,6 +23,6 @@ public class dbConnection {
         catch (ClassNotFoundException ex) {
             ex.printStackTrace();
         }
-        return  null
+        return  null;
     }
 }
