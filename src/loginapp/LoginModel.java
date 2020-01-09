@@ -13,7 +13,7 @@ public class LoginModel {
     public LoginModel() {
         try {
             this.connection = dbConnection.getConnection();
-        }catch (SQLException ex) {
+        }catch (SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }
         if(this.connection == null) {
