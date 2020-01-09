@@ -1,5 +1,6 @@
 package loginapp;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -12,7 +13,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
-    LoginModel LoginModel = new LoginModel();
+    LoginModel loginModel = new LoginModel();
 
     @FXML
     private Label dbstatus;
@@ -26,6 +27,12 @@ public class LoginController implements Initializable {
     private Button loginButton;
 
     public void initialize(URL url, ResourceBundle rb) {
+        if (this.loginModel.isDatabaseConnected()) {
+            this.dbstatus.setText("Connected to DataBase");
+        }else {
+            this.dbstatus.setText("Not Connected to DataBase");
+        }
 
+        this.combobox.setItems(FXCollections.observableArrayList(option.values()));
     }
 }
