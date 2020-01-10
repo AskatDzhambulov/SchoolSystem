@@ -1,12 +1,10 @@
 package loginapp;
 
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,7 +18,7 @@ public class LoginController implements Initializable {
     @FXML
     private TextField username;
     @FXML
-    private TextField password;
+    private PasswordField password;
     @FXML
     private ComboBox<option> combobox;
     @FXML
@@ -34,5 +32,18 @@ public class LoginController implements Initializable {
         }
 
         this.combobox.setItems(FXCollections.observableArrayList(option.values()));
+    }
+
+    @FXML
+    public void Login(ActionEvent event) {
+
+    }
+
+    public void studentLogin() {
+
+    }
+
+    public void adminLogin() {
+
     }
 }
