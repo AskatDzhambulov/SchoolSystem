@@ -30,6 +30,8 @@ public class LoginController implements Initializable {
     private ComboBox<option> combobox;
     @FXML
     private Button loginButton;
+    @FXML
+    private Label loginStatus;
 
     public void initialize(URL url, ResourceBundle rb) {
         if (this.loginModel.isDatabaseConnected()) {
@@ -43,14 +45,33 @@ public class LoginController implements Initializable {
 
     @FXML
     public void Login(ActionEvent event) {
+        try {
 
+            if (this.loginModel.isLogin(this.username.getText(), this.password.getText(), ((option)this.combobox.getValue()).toString())) {
+                Stage stage = (Stage) this.loginButton.getScene().getWindow();
+                stage.close();
+                switch (((option) this.combobox.getValue()).toString())
+                {
+                    case "Admin":
+                        adminLogin();
+                        break;
+                    case "Student":
+                        studentLogin();
+                        break;
+                }
+            } else {
+                this.loginStatus.setText("Wrong Credentials");
+            }
+        }catch (Exception localException){
+
+        }
     }
 
     public void studentLogin() {
         try {
             Stage userStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
-            Pane root  =  (Pane) loader.load(getClass().getResource("/student/studentFXML.fxml").openStream());
+            Pane root  =  (Pane)loader.load(getClass().getResource("/student/studentFXML.fxml").openStream());
 
             StudentsController studentsController = (StudentsController)loader.getController();
 
