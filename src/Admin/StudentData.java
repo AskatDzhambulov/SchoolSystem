@@ -7,6 +7,20 @@ public class StudentData {
 
     private final StringProperty ID;
     private final StringProperty firstName;
+    private final StringProperty lastName;
+    private final StringProperty email;
+    private final StringProperty DOB;
+
+    public StudentData(String id, String firstname, String lastname, String email, String dob) {
+
+        this.ID = new SimpleStringProperty(id);
+        this.firstName = new SimpleStringProperty(firstname);
+        this.lastName = new SimpleStringProperty(lastname);
+        this.email = new SimpleStringProperty(email);
+        this.DOB = new SimpleStringProperty(dob);
+
+    }
+
 
     public String getID() {
         return ID.get();
@@ -68,17 +82,4 @@ public class StudentData {
         this.DOB.set(DOB);
     }
 
-    private final StringProperty lastName;
-    private final StringProperty email;
-    private final StringProperty DOB;
-
-    public StudentData(String id, String firstname, String lastname, String email, String dob) {
-
-        this.ID = new SimpleStringProperty(id);
-        this.firstName = SimpleStringProperty(firstname)
-        this.lastName = SimpleStringProperty(lastname)
-        this.email = SimpleStringProperty(email)
-        this.DOB = SimpleStringProperty(dob)
-
-    }
 }
