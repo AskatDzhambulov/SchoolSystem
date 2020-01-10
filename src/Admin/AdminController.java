@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import dbUtil.dbConnection;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -28,7 +29,7 @@ public class AdminController implements Initializable {
     @FXML
     private TextField email;
     @FXML
-    private DatePicker dob;
+    private DatePicker DOB;
 
     @FXML
     private TableView<StudentData> studenttable;
@@ -66,5 +67,14 @@ public class AdminController implements Initializable {
         }catch (SQLException e) {
             System.err.println("Error" + e);
         }
+
+        this.idcolumn.setCellValueFactory(new PropertyValueFactory<StudentData, String>("ID"));
+        this.firstnamecolumn.setCellValueFactory(new PropertyValueFactory<StudentData, String>("firstname"));
+        this.lastnamecolumn.setCellValueFactory(new PropertyValueFactory<StudentData, String>("lastname"));
+        this.emailcolumn.setCellValueFactory(new PropertyValueFactory<StudentData, String>("email"));
+        this.dobcolumn.setCellValueFactory(new PropertyValueFactory<StudentData, String>("DOB"));
+
+        this.studenttable.setItems(null);
+        this.studenttable.setItems(this.data);
     }
 }
