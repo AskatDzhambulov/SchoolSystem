@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="school" uuid="895c2dbd-47e4-4392-84eb-663342a2c5a8">
+    <data-source name="school.sqlite" uuid="3d48a7ce-e6ec-4639-8e04-a9eb48fd846a">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
       <auth-required>false</auth-required>
       <schema-mapping />
     </data-source>
