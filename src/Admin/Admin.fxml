@@ -23,13 +23,13 @@
                      <children>
                         <HBox layoutX="348.0" layoutY="-4.0" prefHeight="688.0" prefWidth="932.0">
                            <children>
-                              <TableView prefHeight="688.0" prefWidth="940.0">
+                              <TableView fx:id="studenttable" prefHeight="688.0" prefWidth="940.0">
                                 <columns>
-                                  <TableColumn prefWidth="156.33334350585938" text="ID" />
-                                  <TableColumn prefWidth="153.33331298828125" text="First Name" />
-                                    <TableColumn minWidth="0.0" prefWidth="242.66668701171875" text="Last Name" />
-                                    <TableColumn minWidth="0.0" prefWidth="227.33331298828125" text="Email" />
-                                    <TableColumn prefWidth="154.0" text="DOB" />
+                                  <TableColumn fx:id="idcolumn" prefWidth="156.33334350585938" text="ID" />
+                                  <TableColumn fx:id="firstnamecolumn" prefWidth="153.33331298828125" text="First Name" />
+                                    <TableColumn fx:id="lastnamecolumn" minWidth="0.0" prefWidth="242.66668701171875" text="Last Name" />
+                                    <TableColumn fx:id="emailcolumn" minWidth="0.0" prefWidth="227.33331298828125" text="Email" />
+                                    <TableColumn fx:id="dobcolumn" prefWidth="154.0" text="DOB" />
                                 </columns>
                               </TableView>
                            </children>
