@@ -14,6 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -76,5 +77,28 @@ public class AdminController implements Initializable {
 
         this.studenttable.setItems(null);
         this.studenttable.setItems(this.data);
+    }
+
+    @FXML
+    private void addStudent(ActionEvent event) {
+        String sqlInsert = "INSERT INTO students(id , fname, lname, email, DOB) VALUES (?, ?, ?, ?, ?)";
+
+        try {
+            Connection conn = dbConnection.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sqlInsert);
+
+            stmt.setString(1, this.id.getText());
+            stmt.setString(2, this.firstname.getText());
+            stmt.setString(3, this.lastname.getText());
+            stmt.setString(4, this.email.getText());
+            stmt.setString(5, this.DOB.getEditor().getText());
+
+            stmt.execute();
+            conn.close();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
