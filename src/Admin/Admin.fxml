@@ -66,12 +66,12 @@
                                     <Insets left="15.0" right="15.0" />
                                  </VBox.margin>
                               </DatePicker>
-                              <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="305.0" text="Add Entry">
+                              <Button mnemonicParsing="false" onAction="#addStudent" prefHeight="26.0" prefWidth="305.0" text="Add Entry">
                                  <VBox.margin>
                                     <Insets left="15.0" right="15.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button layoutX="40.0" layoutY="177.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="305.0" text="Clear Form">
+                              <Button layoutX="40.0" layoutY="177.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="26.0" prefWidth="305.0" text="Clear Form">
                                  <VBox.margin>
                                     <Insets left="15.0" right="15.0" />
                                  </VBox.margin>
@@ -89,6 +89,79 @@
                      </children></AnchorPane>
             </content>
           </Tab>
+            <Tab text="Admin section">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="1295.0">
+                     <children>
+                        <HBox layoutX="348.0" layoutY="-4.0" prefHeight="688.0" prefWidth="932.0">
+                           <children>
+                              <TableView fx:id="studenttable1" prefHeight="688.0" prefWidth="940.0">
+                                 <columns>
+                                    <TableColumn fx:id="idcolumn1" prefWidth="156.33334350585938" text="ID" />
+                                    <TableColumn fx:id="firstnamecolumn1" prefWidth="153.33331298828125" text="First Name" />
+                                    <TableColumn fx:id="lastnamecolumn1" minWidth="0.0" prefWidth="242.66668701171875" text="Last Name" />
+                                    <TableColumn fx:id="emailcolumn1" minWidth="0.0" prefWidth="227.33331298828125" text="Email" />
+                                    <TableColumn fx:id="dobcolumn1" prefWidth="154.0" text="DOB" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="-2.0" layoutY="-4.0" prefHeight="690.0" prefWidth="354.0">
+                           <children>
+                              <Label prefHeight="28.0" prefWidth="354.0" text="Add Students">
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="id1" prefHeight="26.0" prefWidth="354.0" promptText="ID">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="firstname1" layoutX="10.0" layoutY="38.0" prefHeight="26.0" prefWidth="354.0" promptText="First Name">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="lastname1" layoutX="10.0" layoutY="38.0" prefHeight="26.0" prefWidth="354.0" promptText="Last Name">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="email1" layoutX="10.0" layoutY="64.0" prefHeight="26.0" prefWidth="354.0" promptText="Email">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <DatePicker fx:id="dob1" prefHeight="35.0" prefWidth="358.0">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <Button mnemonicParsing="false" onAction="#addStudent" prefHeight="26.0" prefWidth="305.0" text="Add Entry">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button layoutX="40.0" layoutY="177.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="26.0" prefWidth="305.0" text="Clear Form">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button layoutX="40.0" layoutY="203.0" mnemonicParsing="false" onAction="#loadStudentData" prefHeight="26.0" prefWidth="305.0" text="Local Data">
+                                 <VBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="15.0" right="15.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

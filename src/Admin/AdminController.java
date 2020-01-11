@@ -81,7 +81,7 @@ public class AdminController implements Initializable {
 
     @FXML
     private void addStudent(ActionEvent event) {
-        String sqlInsert = "INSERT INTO students(id , fname, lname, email, DOB) VALUES (?, ?, ?, ?, ?)";
+        String sqlInsert = "INSERT INTO students(id ,fname,lname,email,DOB) VALUES (?, ?, ?, ?, ?)";
 
         try {
             Connection conn = dbConnection.getConnection();
@@ -100,5 +100,14 @@ public class AdminController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void clearFields(ActionEvent event) {
+        this.id.setText("");
+        this.firstname.setText("");
+        this.lastname.setText("");
+        this.email.setText("");
+        this.DOB.setValue(null);
     }
 }
