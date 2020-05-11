@@ -6,11 +6,11 @@ screen of Login Form
 
 you can find admin and student login in school.sqlite file
 
-!![Screenshot](/screen/loginForm.png)
+![Screenshot](/screen/loginForm.png)
 
 
 screen of school system
 
-!![Screenshot](/screen/content.png)
+![Screenshot](/screen/content.png)
 
 
