@@ -14,3 +14,12 @@ screen of school system
 ![Screenshot](/screen/content.png)
 
 
+instoction how to open app:
+
+you need in VM optione paste
+
+
+--module-path "/usr/share/openjfx/lib" --add-modules javafx.controls,javafx.fxml
+
+
+![Screenshot](/screen/options.png)
